@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: 'Cairo', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header{
+    background-color: azure;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 200px ;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: rgb(71, 71, 255);
+    font-weight: 500;
+    font-size: 1.1em;
+    padding-left: 20px;
+}
+
+.logo {
+    text-decoration: none;
+    color: #B9CFD4;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.8em;
+}
+
+section{
+    padding: 100px 200px;
+}
+
+.Properties{
+    padding:180px 200px;
+}
+
+.Properties .content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.definetion{
+    background-color: #3D0C11;
+}
+.related{
+    background-color: #D80032;
+
+}
+.Properties{
+    background-color: #F78CA2;
+}
+.Travel{
+    background-color: #F9DEC9;
+}
+
+/*style of colored animated box*/
+.definetion .cardBox {
+    width: 60%;
+    height: 150px;
+    margin-right: 23%;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 10px 0px,
+      rgba(0, 0, 0, 0.5) 0px 2px 25px 0px;
+  }
+  
+  .definetion .card {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    background: #000814;
+    border-radius: 20px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.5) 0px 18px 36px -18px inset;
+  }
+  
+  .definetion  .card h3, span {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: 800;
+    pointer-events: none;
+    opacity: 0.1;
+  }
+  
+  .definetion  .text {
+    top: 50%;
+  }
+  
+  .definetion  .card .content h3 {
+    font-size: 3rem;
+    padding-bottom: 10px;
+  }
+  
+  .definetion  .card .content p {
+    font-size: 1.6rem;
+    line-height: 25px;
+  }
+  
+  .card .content {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .card:hover .content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .cardBox::before {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 150%;
+    background: #40E0D0;
+    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+    animation: glowing01 5s linear infinite;
+    transform-origin: center;
+    animation: glowing 5s linear infinite;
+  }
+  
+  @keyframes glowing {
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /*flipping card*/
+  .related .content .card {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+  }
+  
+  .related .content .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.999s;
+  }
+  
+  .related .content .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .related .content .card-front,
+  .related .content .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .related .content .card-front {
+    background-color: #6A2C70;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border: 10px solid #6A2C70;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(0deg);
+  }
+  
+  .related .content .card-back {
+    background-color: #F08A5D;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border: 10px solid #F08A5D;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(180deg);
+  }
+
+  .related .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+/* img to txt */
+
+.card-img-txt {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-img-txt svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-img-txt:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-img-txt:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card-img-txt:hover svg {
+  scale: 0;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+
+
+/* Travel */
+.Travel div {
+    background-color: blueviolet;
+    margin:50px;
+    padding: 20px;
+    display: inline-block;
+    border:3px solid black;
+    border-radius: 30px;
+}
+
+.Travel div h1 {
+    color:bisque;
+    font-size:30px;
+    border: 3px solid black;
+    border-radius:15px;
+    padding:10px;
+}
+
+.Travel div .content{
+    border-radius: 20px;
+    border:3px dotted black;
+    padding:10px;
+    margin:10px;
+}
+
+.Travel div .content p{
+    color:#f2f2f2;
+}
+
+.Travel .row1{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.show-details {
+    text-decoration: none;
+    color:#3a6cf4;
+    font-size:1.2em;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.main-btn {
+    color:#fff;
+    background-color:#3a6cf4;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    display:inline-block;
+    align-items: center;
+    padding:0.9375em 2.1875em;
+    letter-spacing:1px;
+    border-radius: 15px;
+    margin: 0 35%;
+    transition: 0.7s ease;
+}
+
+.main-btn:hover {
+    background-color:#002792;
+    transform: scale(1.1);
+}
+
